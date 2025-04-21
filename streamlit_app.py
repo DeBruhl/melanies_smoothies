@@ -35,7 +35,7 @@ if ingredients_list:
     my_insert_stmt = """ insert into SMOOTHIES.PUBLIC.ORDERS(INGREDIENTS,name_on_order)
         values ('""" + ingredients_string + """','"""+name_on_order+"""');"""
 
-    st.write(my_insert_stmt)
+    #st.write(my_insert_stmt)
     #st.stop()
 
     time_to_insert = st.button('Submit Order')
