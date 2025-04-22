@@ -41,9 +41,9 @@ for fruit_chosen in ingredients_list:
 
 time_to_insert = st.button('Submit Order')
 if time_to_insert:
-    my_insert_stmt = """ insert into SMOOTHIES.PUBLIC.ORDERS(INGREDIENTS,name_on_order)
-        values ('""" + ingredients_string + """','"""+name_on_order+"""');"""
-    session.sql(my_insert_stmt).collect()
+    #my_insert_stmt = """ insert into SMOOTHIES.PUBLIC.ORDERS(INGREDIENTS,name_on_order)
+        #values ('""" + ingredients_string + """','"""+name_on_order+"""');"""
+    session.sql(""" insert into SMOOTHIES.PUBLIC.ORDERS(INGREDIENTS,name_on_order) values ('""" + ingredients_string + """','"""+name_on_order+"""');""").collect()
 st.success('Your Smoothie is ordered, '+name_on_order+'!' , icon="✅")
 
 my_dataframe = session.table("SMOOTHIES.PUBLIC.ORDERS").select(col('INGREDIENTS'),col('NAME_ON_ORDER'),col('ORDER_FILLED'))
