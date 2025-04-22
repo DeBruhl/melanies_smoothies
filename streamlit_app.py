@@ -42,20 +42,20 @@ if ingredients_list:
         st.write('The search value for ', fruit_chosen,' is ', search_on, '.')
 
       
-        smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
-        sf_df = st.dataframe(data=smoothiefroot_response.json(), use_container_width = True)
+#        smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
+#        sf_df = st.dataframe(data=smoothiefroot_response.json(), use_container_width = True)
 
   #st.write(ingredients_string)
 
-    my_insert_stmt = """ insert into SMOOTHIES.PUBLIC.ORDERS(INGREDIENTS,name_on_order)
-        values ('""" + ingredients_string + """','"""+name_on_order+"""');"""
+#    my_insert_stmt = """ insert into SMOOTHIES.PUBLIC.ORDERS(INGREDIENTS,name_on_order)
+#        values ('""" + ingredients_string + """','"""+name_on_order+"""');"""
 
-    #st.write(my_insert_stmt)
-    #st.stop()
+#    #st.write(my_insert_stmt)
+#    #st.stop()
 
-    time_to_insert = st.button('Submit Order')
+#    time_to_insert = st.button('Submit Order')
 
-    if time_to_insert:
-        session.sql(my_insert_stmt).collect()
-        st.success('Your Smoothie is ordered, '+name_on_order+'!' , icon="✅")
+#    if time_to_insert:
+#        session.sql(my_insert_stmt).collect()
+#        st.success('Your Smoothie is ordered, '+name_on_order+'!' , icon="✅")
 
